@@ -159,10 +159,10 @@ P6 <- "b"
 
 roll_die2 <- function(P5, P6){
 
-ab <- sample(c(1:6), 15, replace = T)
+ab <- sample(c(1:6), 15, replace = T, prob = c(.1,.1,.1,.9,.9,.9))
 cd <- sample(c(1:6), 15, replace = T)
 
-sample(c('ab','cd'), prob = c(.75,.23))
+
 
 L.ab <- ab[8]
 L.bc <- cd[8]
@@ -177,6 +177,9 @@ L.bc <- cd[8]
   }
 
 roll_die2("A", "B")
+
+
+
 
 
 ```
