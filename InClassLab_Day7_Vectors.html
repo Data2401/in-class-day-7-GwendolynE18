@@ -448,7 +448,7 @@ result.</li>
 </ol>
 <pre class="r"><code>dice &lt;- 1:6
 sample(c(1:6), replace = T)</code></pre>
-<pre><code>## [1] 6 6 4 2 3 1</code></pre>
+<pre><code>## [1] 4 3 1 1 4 2</code></pre>
 <ol style="list-style-type: decimal">
 <li>Write a function to simulate rolling 2 6-sided dice that returns the
 sum of the rolls.</li>
@@ -456,7 +456,7 @@ sum of the rolls.</li>
 <pre class="r"><code>dice_1 &lt;- 1:6
 dice_2 &lt;- 1:6
 sample(c(dice_1 + dice_2), 1)</code></pre>
-<pre><code>## [1] 10</code></pre>
+<pre><code>## [1] 2</code></pre>
 <ol style="list-style-type: decimal">
 <li>Write a function that takes two people name’s as strings, simulates
 rolling a 6-sided die for each of the names, then returns the name of
@@ -492,7 +492,7 @@ s2 &lt;- sample(dice_2,1, replace = TRUE)
 
 
 roll_a_die(&quot;A&quot;, &quot;B&quot;)</code></pre>
-<pre><code>## [1] &quot;A&quot;</code></pre>
+<pre><code>## [1] &quot;B&quot;</code></pre>
 <ol start="2" style="list-style-type: decimal">
 <li>Write a second function (you may start by modifying the first one)
 that takes two names as strings, simulates both of them rolling die 15
@@ -520,7 +520,7 @@ L.bc &lt;- cd[8]
   }
 
 roll_die(&quot;A&quot;, &quot;B&quot;)</code></pre>
-<pre><code>## [1] &quot;a&quot;</code></pre>
+<pre><code>## [1] &quot;b&quot;</code></pre>
 <ol start="3" style="list-style-type: decimal">
 <li>Modify your function from (2) so that the person in the first
 argument has a die that is weighted to get higher numbers more often
@@ -533,10 +533,10 @@ P6 &lt;- &quot;b&quot;
 
 roll_die2 &lt;- function(P5, P6){
 
-ab &lt;- sample(c(1:6), 15, replace = T)
+ab &lt;- sample(c(1:6), 15, replace = T, prob = c(.1,.1,.1,.9,.9,.9))
 cd &lt;- sample(c(1:6), 15, replace = T)
 
-sample(c(&#39;ab&#39;,&#39;cd&#39;), prob = c(.75,.23))
+
 
 L.ab &lt;- ab[8]
 L.bc &lt;- cd[8]
@@ -551,7 +551,7 @@ L.bc &lt;- cd[8]
   }
 
 roll_die2(&quot;A&quot;, &quot;B&quot;)</code></pre>
-<pre><code>## [1] &quot;a&quot;</code></pre>
+<pre><code>## [1] &quot;TIE!&quot;</code></pre>
 </div>
 
 
